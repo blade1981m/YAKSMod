@@ -3,6 +3,11 @@
 eclipse
 build/
 
+# Ignore IDEA files
+*.iml
+*.ipr
+*.iws
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
