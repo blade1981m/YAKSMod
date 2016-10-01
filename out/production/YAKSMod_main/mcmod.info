@@ -1,0 +1,18 @@
+[
+{
+  "modid": "YAKSMod",
+  "name": "YAKS Mod",
+  "description": "A mod for customizing YAKS Pack mod-pack.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "blade1981m"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
