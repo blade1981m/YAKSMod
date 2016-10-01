@@ -22,7 +22,7 @@ group= "net.blade1981m.yaksmod" // http://maven.apache.org/guides/mini/guide-nam
 archivesBaseName = "YAKSMod"
 
 minecraft {
-    version = "1.7.10-10.13.4.1558-1.7.10"
+    version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
 }
 
@@ -61,3 +61,5 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+idea { module { inheritOutputDirs = true } }
