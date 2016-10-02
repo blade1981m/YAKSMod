@@ -11,6 +11,7 @@ import net.blade1981m.yaksmod.reference.Reference;
 import net.blade1981m.yaksmod.util.LogHelper;
 import net.blade1981m.yaksmod.util.RecipeHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import static net.minecraftforge.oredict.OreDictionary.doesOreNameExist;
@@ -32,7 +33,19 @@ public class YAKSMod {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        if (Loader.isModLoaded("malisisdoors") && (Loader.isModLoaded("ExtraUtilities"))) {
+            LogHelper.info("Malisis Doors and Extra Utilities detected. Removing Blackout Curtains recipe");
+            ItemStack blackoutCurtains12 = GameRegistry.findItemStack("ExtraUtilities", "curtains", 12);
+            RecipeHelper.removeAnyRecipe(blackoutCurtains12);
+            LogHelper.info("Adding Blackout Curtains recipe with Black Dye");
+            GameRegistry.addRecipe(new ShapedOreRecipe((blackoutCurtains12),
+                    "WWX",
+                    "WWD",
+                    "WWX",
+                    'W', "blockCloth",
+                    'D', "dyeBlack"
+            ));
+        }
     }
 
     @Mod.EventHandler
@@ -53,5 +66,6 @@ public class YAKSMod {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.fragmentedCarbon,Parts.fuelPellets));
             }
         }
+
     }
 }
